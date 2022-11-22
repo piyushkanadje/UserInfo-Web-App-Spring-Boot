@@ -7,7 +7,7 @@ public class AuthenticationService {
   
 
 
-public boolean authenticateService(String email, String password) {
+public boolean authenticate(String email, String password) {
 	 
 	
 boolean isValidemail =email.equalsIgnoreCase("admin@admin.com");

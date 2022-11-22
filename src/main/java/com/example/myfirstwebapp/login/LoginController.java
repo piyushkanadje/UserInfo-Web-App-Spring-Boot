@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 //import org.springframework.web.bind.annotation.RestController;
 
 @Controller
-@SessionAttributes("name")
+@SessionAttributes("email")
 public class LoginController {
       
 	private AuthenticationService authenticationService; //authenticationServie is method in AuthenticationServie
@@ -29,25 +29,19 @@ public class LoginController {
 
 		return "Login";
 	}
+ 
 
 	
-
+ 
 	@RequestMapping(value = "login", method = RequestMethod.POST)
 	public String welcome(@RequestParam String email, String password, ModelMap model) {
-		
-		if(email== " ") {
-			model.put("emailError", "Please Add valid email");
-		}
-		if(password== " ") {
-			model.put("passwordError", "Please Add valid password");
-		}
-		
-		if(authenticationService.authenticateService(email, password)) {
+
+		if(authenticationService.authenticate(email, password)) {
 			model.put("email", email);
-			model.put("password", password);
+			model.put("password1", password);
 			return "welcome";
 		}
-			model.put("errorMessage", "Invalid  Email and Password");
+			
 			return "Login" ;
 			
 		

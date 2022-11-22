@@ -1,16 +1,7 @@
-<html>
-
-<head>
-<title> Welcome </title>
-</head>
-
-<body>
-
+<%@ include file="common/header.jspf" %>
+<%@ include file="common/navigation.jspf" %>
 <p>Welcome to  Login info </p>
 
 <p>My name is ${email} </p>
 <p>My password is ${password} </p>
-
-
-</body>
-</html>
+<%@ include file="common/footer.jspf" %>

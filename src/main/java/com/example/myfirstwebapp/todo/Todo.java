@@ -2,6 +2,8 @@ package com.example.myfirstwebapp.todo;
 
 import java.time.LocalDate;
 
+import jakarta.validation.constraints.Size;
+
 
 //We need Service for handling static todo
 public class Todo {
@@ -17,6 +19,8 @@ public class Todo {
 
 	private int id;
 	private String username;
+	
+	@Size(min=10, message="Enter at least 10 character")
 	private String description;
 	private LocalDate date;
 	private boolean done;
